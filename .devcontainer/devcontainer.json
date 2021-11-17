@@ -1,0 +1,34 @@
+{
+    "name": "Pulumi Control Tower Provider",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "PULUMI_CTL_VERSION": "0.0.28"
+            // "HTTP_PROXY": "http://http.proxy.fmr.com:8000",
+            // "HTTPS_PROXY": "http://http.proxy.fmr.com:8000",
+            // "NO_PROXY": "fmr.com,fmrcloud.com,localhost,127.0.0.1,10.0.0.0/8,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24,169.254.169.254,169.254.170.2,.docker.internal"
+        }
+    },
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "bin/bash",
+                "args": []
+            }
+        },
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-python.python"
+    ],
+    "shutdownAction": "stopContainer",
+    "mounts": [
+        // Persist bash history
+        "source=pulumi-controltower-bashhistory,target=/commandhistory,type=volume",
+        // Persist VS Code extension installs
+        "source=pulumi-controltower-vsc-extensions,target=/root/.vscode-server/extensions,type=volume",
+        // And/or for VS Code Insiders
+        "source=pulumi-controltower-vsc-insiders-extensions,target=/root/.vscode-server-insiders/extensions,type=volume"
+    ]
+}
