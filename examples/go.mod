@@ -1,3 +1,3 @@
-module github.com/pulumi/pulumi-xyz/examples
+module github.com/VMGVentures/pulumi-provider-controltower/examples
 
 go 1.16

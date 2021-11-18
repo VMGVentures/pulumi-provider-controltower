@@ -1,6 +1,6 @@
 # Foo Resource Provider
 
-The Foo Resource Provider lets you manage [Foo](http://example.com) resources.
+The Control Tower Resource Provider lets you create Control Tower Managed AWS Accounts [Control Tower Managed AWS Accounts](https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html).
 
 ## Installing
 
